@@ -16,7 +16,7 @@
 <meta property="og:description" content="1.前期整备  1.安装brew 2.安装node.js  123&amp;gt; brew install node  3.验证node.js是否安装成功  1234&amp;gt; node -v  &amp;gt; 结果：v12.3.1  4.安装git  123&amp;gt; brew install git  5.验证git是否安装成功  1234&amp;gt; git --version&amp;gt; 结果：git versi">
 <meta property="og:locale" content="default">
 <meta property="og:image" content="http://yoursite.com/2019/06/01/images/hexoSetting.png">
-<meta property="og:updated_time" content="2019-06-02T14:43:43.185Z">
+<meta property="og:updated_time" content="2019-06-02T14:46:35.302Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="使用Hexo+Github搭建博客">
 <meta name="twitter:description" content="1.前期整备  1.安装brew 2.安装node.js  123&amp;gt; brew install node  3.验证node.js是否安装成功  1234&amp;gt; node -v  &amp;gt; 结果：v12.3.1  4.安装git  123&amp;gt; brew install git  5.验证git是否安装成功  1234&amp;gt; git --version&amp;gt; 结果：git versi">
@@ -126,15 +126,15 @@
 <ul>
 <li>4.初始化本地博客</li>
 </ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">&gt; hexo init  </span><br><span class="line">&gt; 结果：  ![](../images/hexoInit.png)</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">&gt; hexo init  </span><br><span class="line">&gt; 结果：  </span><br><span class="line">![](../images/hexoInit.png)</span><br><span class="line"></span><br></pre></td></tr></table></figure>
 <ul>
 <li>5.安装组件</li>
 </ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">&gt; npm install   </span><br><span class="line">&gt; 结果：   ![](../images/hexoNpmInstall.png)</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">&gt; npm install   </span><br><span class="line">&gt; 结果：   </span><br><span class="line">![](../images/hexoNpmInstall.png)</span><br><span class="line"></span><br></pre></td></tr></table></figure>
 <ul>
 <li>6.启动本地博客</li>
 </ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">&gt; hexo g      </span><br><span class="line">&gt; hexo s  </span><br><span class="line">&gt; 结果：  ![](../images/hexogS.png) </span><br><span class="line">&gt; 成功:</span><br><span class="line">&gt; ![](../images/hexoHost.png)</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">&gt; hexo g      </span><br><span class="line">&gt; hexo s  </span><br><span class="line">&gt; 结果：  </span><br><span class="line">![](../images/hexogS.png) </span><br><span class="line">&gt; 成功:   </span><br><span class="line">![](../images/hexoHost.png)</span><br><span class="line"></span><br></pre></td></tr></table></figure>
 <h4 id="3-将hexo与github-page联系起来"><a class="header-anchor" href="#3-将hexo与github-page联系起来"></a>3.将Hexo与Github Page联系起来</h4>
 <ul>
 <li>1.git首次设置</li>
@@ -145,16 +145,14 @@
 <p>2.<a href="https://zengkebing3630.github.io/2019/05/31/%E7%AE%A1%E7%90%86%E5%A4%9A%E4%B8%AAssh-Key-MacOS/" target="_blank" rel="noopener">配置ssh-key</a></p>
 </li>
 <li>
-<p>3.修改配置文件_config.yml(如下图设置，分支需要和github中对应)</p>
+<p>3.修改配置文件_config.yml(如下图设置，分支需要和github中对应)<br>
+<img src="../images/hexoSetting.png" alt></p>
+</li>
+<li>
+<p>4.新建博客</p>
 </li>
 </ul>
-<blockquote>
-<p><img src="../images/hexoSetting.png" alt></p>
-</blockquote>
-<ul>
-<li>4.新建博客</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">  </span><br><span class="line">&gt; hexo new &quot;中文xxxx&quot;  </span><br><span class="line">&gt; 结果：    </span><br><span class="line">&gt; ![](../images/hexoPost.png)</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">  </span><br><span class="line">&gt; hexo new &quot;中文xxxx&quot;  </span><br><span class="line">&gt; 结果：    </span><br><span class="line"></span><br><span class="line">![](../images/hexoPost.png)</span><br><span class="line"></span><br></pre></td></tr></table></figure>
 <ul>
 <li>5.安装部署扩展</li>
 </ul>
@@ -162,7 +160,7 @@
 <ul>
 <li>6.部署</li>
 </ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">  </span><br><span class="line">&gt; hexo d -g</span><br><span class="line">&gt; 结果：    </span><br><span class="line">&gt; ![](../images/hexoLastResult.png)</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">  </span><br><span class="line">&gt; hexo d -g  </span><br><span class="line">&gt; 结果：    </span><br><span class="line"></span><br><span class="line">![](../images/hexoLastResult.png)</span><br><span class="line"></span><br></pre></td></tr></table></figure>
 <p>参考网站<br>
 1.<a href="https://brew.sh/" target="_blank" rel="noopener">Homebrew</a><br>
 2.<a href="https://hexo.io/zh-cn/" target="_blank" rel="noopener">Hexo</a></p>
