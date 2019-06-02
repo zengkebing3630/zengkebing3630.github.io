@@ -7,20 +7,20 @@
   
   <title>管理多个ssh-Key(MacOS) | KT.Moral</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="null1.打开终端，前往.ssh目录 123&amp;gt; cd ~/.ssh/   null2.新建ssh-key  1.以个人邮箱创建ssh-ky  123&amp;gt; ssh-keygen -t rsa -b 4096 -C &amp;quot;your_email@example.com&amp;quot;  2.输入ssh-key文件名称  123&amp;gt; Enter a file in which to sa">
+  <meta name="description" content="1.打开终端，前往.ssh目录 123&amp;gt; cd ~/.ssh/   2.新建ssh-key  1.以个人邮箱创建ssh-ky  123&amp;gt; ssh-keygen -t rsa -b 4096 -C &amp;quot;your_email@example.com&amp;quot;  2.输入ssh-key文件名称  123&amp;gt; Enter a file in which to save the k">
 <meta name="keywords" content="git,sshKey">
 <meta property="og:type" content="article">
 <meta property="og:title" content="管理多个ssh-Key(MacOS)">
 <meta property="og:url" content="http://yoursite.com/2019/05/31/管理多个ssh-Key-MacOS/index.html">
 <meta property="og:site_name" content="KT.Moral">
-<meta property="og:description" content="null1.打开终端，前往.ssh目录 123&amp;gt; cd ~/.ssh/   null2.新建ssh-key  1.以个人邮箱创建ssh-ky  123&amp;gt; ssh-keygen -t rsa -b 4096 -C &amp;quot;your_email@example.com&amp;quot;  2.输入ssh-key文件名称  123&amp;gt; Enter a file in which to sa">
+<meta property="og:description" content="1.打开终端，前往.ssh目录 123&amp;gt; cd ~/.ssh/   2.新建ssh-key  1.以个人邮箱创建ssh-ky  123&amp;gt; ssh-keygen -t rsa -b 4096 -C &amp;quot;your_email@example.com&amp;quot;  2.输入ssh-key文件名称  123&amp;gt; Enter a file in which to save the k">
 <meta property="og:locale" content="default">
 <meta property="og:image" content="http://yoursite.com/2019/05/31/images/sshKeyResult.png">
 <meta property="og:image" content="http://yoursite.com/2019/05/31/images/ssh-key-paste.png">
-<meta property="og:updated_time" content="2019-05-31T08:51:43.783Z">
+<meta property="og:updated_time" content="2019-05-31T09:05:02.094Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="管理多个ssh-Key(MacOS)">
-<meta name="twitter:description" content="null1.打开终端，前往.ssh目录 123&amp;gt; cd ~/.ssh/   null2.新建ssh-key  1.以个人邮箱创建ssh-ky  123&amp;gt; ssh-keygen -t rsa -b 4096 -C &amp;quot;your_email@example.com&amp;quot;  2.输入ssh-key文件名称  123&amp;gt; Enter a file in which to sa">
+<meta name="twitter:description" content="1.打开终端，前往.ssh目录 123&amp;gt; cd ~/.ssh/   2.新建ssh-key  1.以个人邮箱创建ssh-ky  123&amp;gt; ssh-keygen -t rsa -b 4096 -C &amp;quot;your_email@example.com&amp;quot;  2.输入ssh-key文件名称  123&amp;gt; Enter a file in which to save the k">
 <meta name="twitter:image" content="http://yoursite.com/2019/05/31/images/sshKeyResult.png">
   
     <link rel="alternate" href="/atom.xml" title="KT.Moral" type="application/atom+xml">
@@ -90,9 +90,9 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h4 id="1-打开终端-前往-ssh目录"><a class="header-anchor" href="#1-打开终端-前往-ssh目录">null</a>1.打开终端，前往.ssh目录</h4>
+        <h4 id="1-打开终端-前往-ssh目录"><a class="header-anchor" href="#1-打开终端-前往-ssh目录"></a>1.打开终端，前往.ssh目录</h4>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">&gt; cd ~/.ssh/  </span><br><span class="line"></span><br></pre></td></tr></table></figure>
-<h4 id="2-新建ssh-key"><a class="header-anchor" href="#2-新建ssh-key">null</a>2.新建ssh-key</h4>
+<h4 id="2-新建ssh-key"><a class="header-anchor" href="#2-新建ssh-key"></a>2.新建ssh-key</h4>
 <ul>
 <li>1.以个人邮箱创建ssh-ky</li>
 </ul>
@@ -113,7 +113,7 @@
 <li>5.成功创建ssh-key<br>
 <img src="../images/sshKeyResult.png" alt></li>
 </ul>
-<h4 id="3-将ssh-key添加到ssh-agent"><a class="header-anchor" href="#3-将ssh-key添加到ssh-agent">null</a>3.将ssh-key添加到ssh-agent</h4>
+<h4 id="3-将ssh-key添加到ssh-agent"><a class="header-anchor" href="#3-将ssh-key添加到ssh-agent"></a>3.将ssh-key添加到ssh-agent</h4>
 <ul>
 <li>1.查看ssh-agent已存在的ssh-key</li>
 </ul>
@@ -126,13 +126,13 @@
 <li>3.查看ssh-agent是否添加成功</li>
 </ul>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">&gt; ssh-add -l  </span><br><span class="line">&gt; 结果: 4096 SHA256:xxxxxxxxxxxxxxxx your_email@example.com (RSA)</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-<h4 id="4-复制公钥"><a class="header-anchor" href="#4-复制公钥">null</a>4.复制公钥</h4>
+<h4 id="4-复制公钥"><a class="header-anchor" href="#4-复制公钥"></a>4.复制公钥</h4>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">&gt; pbcopy &lt; ~/.ssh/xxxx.pub</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-<h4 id="5-设置github公钥-直接粘贴"><a class="header-anchor" href="#5-设置github公钥-直接粘贴">null</a>5.设置github公钥(直接粘贴)</h4>
+<h4 id="5-设置github公钥-直接粘贴"><a class="header-anchor" href="#5-设置github公钥-直接粘贴"></a>5.设置github公钥(直接粘贴)</h4>
 <p><img src="../images/ssh-key-paste.png" alt></p>
-<h4 id="6-测试"><a class="header-anchor" href="#6-测试">null</a>6.测试</h4>
+<h4 id="6-测试"><a class="header-anchor" href="#6-测试"></a>6.测试</h4>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">&gt; ssh -T git@github.com  </span><br><span class="line">&gt; 结果: Hi XXX! You&apos;ve successfully authenticated, but GitHub does not provide shell access.</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-<h3 id="参考网站："><a class="header-anchor" href="#参考网站：">null</a>参考网站：</h3>
+<h3 id="参考网站："><a class="header-anchor" href="#参考网站："></a>参考网站：</h3>
 <ul>
 <li>1.<a href="https://help.github.com/en/articles/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent" target="_blank" rel="noopener">Generating a new SSH key and adding it to the ssh-agent</a></li>
 <li>2.<a href="https://help.github.com/en/articles/adding-a-new-ssh-key-to-your-github-account" target="_blank" rel="noopener">Adding a new SSH key to your GitHub account</a></li>
@@ -141,7 +141,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/05/31/管理多个ssh-Key-MacOS/" data-id="cjwbuwjhk00005ijdlv5pfpe4" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/05/31/管理多个ssh-Key-MacOS/" data-id="cjwf1mzeg0001kpjd73624a33" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/git/">git</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/sshKey/">sshKey</a></li></ul>
@@ -150,6 +150,20 @@
   </div>
   
     
+<nav id="article-nav">
+  
+    <a href="/2019/05/31/VSCode中React-native环境配置/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          VSCode中React-native环境配置
+        
+      </div>
+    </a>
+  
+  
+</nav>
+
   
 </article>
 
@@ -164,7 +178,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tags</h3>
     <div class="widget">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/">git</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/sshKey/">sshKey</a></li></ul>
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Github/">Github</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Hexo/">Hexo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Mac/">Mac</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/RN/">RN</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/React-Native/">React-Native</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/VSCode/">VSCode</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/">git</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/sshKey/">sshKey</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/搭建博客/">搭建博客</a></li></ul>
     </div>
   </div>
 
@@ -174,7 +188,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
-      <a href="/tags/git/" style="font-size: 10px;">git</a> <a href="/tags/sshKey/" style="font-size: 10px;">sshKey</a>
+      <a href="/tags/Github/" style="font-size: 10px;">Github</a> <a href="/tags/Hexo/" style="font-size: 10px;">Hexo</a> <a href="/tags/Mac/" style="font-size: 10px;">Mac</a> <a href="/tags/RN/" style="font-size: 10px;">RN</a> <a href="/tags/React-Native/" style="font-size: 10px;">React-Native</a> <a href="/tags/VSCode/" style="font-size: 10px;">VSCode</a> <a href="/tags/git/" style="font-size: 10px;">git</a> <a href="/tags/sshKey/" style="font-size: 10px;">sshKey</a> <a href="/tags/搭建博客/" style="font-size: 10px;">搭建博客</a>
     </div>
   </div>
 
@@ -183,7 +197,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/05/">May 2019</a></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/06/">June 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/05/">May 2019</a></li></ul>
     </div>
   </div>
 
@@ -194,6 +208,14 @@
     <h3 class="widget-title">Recent Posts</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2019/06/01/使用Hexo-Github搭建博客/">使用Hexo+Github搭建博客</a>
+          </li>
+        
+          <li>
+            <a href="/2019/05/31/VSCode中React-native环境配置/">VSCode中React-native环境配置</a>
+          </li>
         
           <li>
             <a href="/2019/05/31/管理多个ssh-Key-MacOS/">管理多个ssh-Key(MacOS)</a>
