@@ -16,7 +16,7 @@
 <meta property="og:description" content="1.Package.json(必须是纯JSON的)内容详解     name:项目名称,必须     version:项目版本,必须     description:项目描述     main:主文件或入口文件|require(‘package’)将返回xxx.js的内容     scripts:运行脚本命令的npm命令行缩写 5.1)test:测试脚本 5.2)build:打包脚本 5.3)r">
 <meta property="og:locale" content="default">
 <meta property="og:image" content="http://yoursite.com/2019/06/14/images/npmPackageVersion.png">
-<meta property="og:updated_time" content="2019-06-17T14:40:37.320Z">
+<meta property="og:updated_time" content="2019-06-17T14:58:55.465Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="NPM与Package那些事">
 <meta name="twitter:description" content="1.Package.json(必须是纯JSON的)内容详解     name:项目名称,必须     version:项目版本,必须     description:项目描述     main:主文件或入口文件|require(‘package’)将返回xxx.js的内容     scripts:运行脚本命令的npm命令行缩写 5.1)test:测试脚本 5.2)build:打包脚本 5.3)r">
@@ -251,28 +251,15 @@
 <ul>
 <li>1.如果只打算接受补丁版本的更新（也就是最后一位的改变）</li>
 </ul>
-<blockquote>
-<p>1.0<br>
-1.0.x<br>
-~1.0.4</p>
-</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">&gt; 1.0   </span><br><span class="line">&gt; 1.0.x   </span><br><span class="line">&gt; ~1.0.4   </span><br><span class="line"></span><br></pre></td></tr></table></figure>
 <ul>
 <li>2.如果接受小版本的更新（第二位的改变)</li>
 </ul>
-<blockquote>
-<p>1<br>
-1.x<br>
-^1.0.4</p>
-</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">      </span><br><span class="line">&gt; 1  </span><br><span class="line">&gt; 1.x   </span><br><span class="line">&gt; ^1.0.4  </span><br><span class="line"></span><br></pre></td></tr></table></figure>
 <ul>
 <li>3.如果可以接受大版本的更新（自然接受小版本和补丁版本的改变)</li>
 </ul>
-<blockquote>
-<ul>
-<li></li>
-</ul>
-<p>x</p>
-</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">  </span><br><span class="line">&gt; *   </span><br><span class="line">&gt; x</span><br><span class="line"></span><br></pre></td></tr></table></figure>
 <h4 id="4-实例"><a class="header-anchor" href="#4-实例"></a>4.实例</h4>
 <figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">"dependencies": &#123;//版本限制在:接受小版本的更新（第二位的改变）</span><br><span class="line">    "lodash": "^3.1.0"</span><br><span class="line">  &#125;,</span><br><span class="line">  "dependencies": &#123;//表示任何版本的更新都接受</span><br><span class="line">    "lodash": "*"</span><br><span class="line">  &#125;,</span><br><span class="line">  "devDependencies": &#123;</span><br><span class="line">    "browserify": "^13.0.0",//表示安装13.x.x的最新版本（不低于13.0.0），但是不安装14.x.x，也就是说安装时不改变大版本号。</span><br><span class="line">    "karma-browserify": "~5.0.1,"//表示安装5.0.x的最新版本（不低于5.0.1），但是不安装5.1.x，也就是说安装时不改变大版本号和次要版本号</span><br><span class="line">    "express": "latest",//最新版本号</span><br><span class="line">    "MD5": "1.2.0"//正常版本号</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h3 id="font-color-19999f-3-npm常用命令-font"><a class="header-anchor" href="#font-color-19999f-3-npm常用命令-font"></a><font color="#19999f"> 3.npm常用命令 </font></h3>
@@ -288,7 +275,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/06/14/NPM与Package那些事/" data-id="cjx0hko9g0004uvjdndsfwnpv" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/06/14/NPM与Package那些事/" data-id="cjx0i8uun00050fjdr27vuno1" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Package-json/">Package.json</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/RN/">RN</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/node/">node</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/npm/">npm</a></li></ul>

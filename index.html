@@ -246,28 +246,15 @@
 <ul>
 <li>1.如果只打算接受补丁版本的更新（也就是最后一位的改变）</li>
 </ul>
-<blockquote>
-<p>1.0<br>
-1.0.x<br>
-~1.0.4</p>
-</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">&gt; 1.0   </span><br><span class="line">&gt; 1.0.x   </span><br><span class="line">&gt; ~1.0.4   </span><br><span class="line"></span><br></pre></td></tr></table></figure>
 <ul>
 <li>2.如果接受小版本的更新（第二位的改变)</li>
 </ul>
-<blockquote>
-<p>1<br>
-1.x<br>
-^1.0.4</p>
-</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">      </span><br><span class="line">&gt; 1  </span><br><span class="line">&gt; 1.x   </span><br><span class="line">&gt; ^1.0.4  </span><br><span class="line"></span><br></pre></td></tr></table></figure>
 <ul>
 <li>3.如果可以接受大版本的更新（自然接受小版本和补丁版本的改变)</li>
 </ul>
-<blockquote>
-<ul>
-<li></li>
-</ul>
-<p>x</p>
-</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">  </span><br><span class="line">&gt; *   </span><br><span class="line">&gt; x</span><br><span class="line"></span><br></pre></td></tr></table></figure>
 <h4 id="4-实例"><a class="header-anchor" href="#4-实例"></a>4.实例</h4>
 <figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">"dependencies": &#123;//版本限制在:接受小版本的更新（第二位的改变）</span><br><span class="line">    "lodash": "^3.1.0"</span><br><span class="line">  &#125;,</span><br><span class="line">  "dependencies": &#123;//表示任何版本的更新都接受</span><br><span class="line">    "lodash": "*"</span><br><span class="line">  &#125;,</span><br><span class="line">  "devDependencies": &#123;</span><br><span class="line">    "browserify": "^13.0.0",//表示安装13.x.x的最新版本（不低于13.0.0），但是不安装14.x.x，也就是说安装时不改变大版本号。</span><br><span class="line">    "karma-browserify": "~5.0.1,"//表示安装5.0.x的最新版本（不低于5.0.1），但是不安装5.1.x，也就是说安装时不改变大版本号和次要版本号</span><br><span class="line">    "express": "latest",//最新版本号</span><br><span class="line">    "MD5": "1.2.0"//正常版本号</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h3 id="font-color-19999f-3-npm常用命令-font"><a class="header-anchor" href="#font-color-19999f-3-npm常用命令-font"></a><font color="#19999f"> 3.npm常用命令 </font></h3>
@@ -283,7 +270,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/06/14/NPM与Package那些事/" data-id="cjx0hko9g0004uvjdndsfwnpv" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/06/14/NPM与Package那些事/" data-id="cjx0i8uun00050fjdr27vuno1" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Package-json/">Package.json</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/RN/">RN</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/node/">node</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/npm/">npm</a></li></ul>
@@ -359,30 +346,40 @@
 <h6 id="多个组件"><a class="header-anchor" href="#多个组件"></a>多个组件</h6>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;url &gt;   </span><br><span class="line">	&lt;Todoitem text=” First” completed=&#123; false&#125; &gt;</span><br><span class="line">	&lt;Todoitem text=” Second&quot; completed=&#123;false&#125; &gt;   </span><br><span class="line">	&lt;Todo工tem text=”Third” completed=&#123;false&#125; &gt;   </span><br><span class="line">&lt;/ul &gt;</span><br></pre></td></tr></table></figure>
 <h6 id="利用key值"><a class="header-anchor" href="#利用key值"></a>利用Key值</h6>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">	&lt;url &gt;   </span><br><span class="line">		&lt;Todoitem key = &#123;1&#125; text=” First” completed=&#123; false&#125; &gt;   </span><br><span class="line">		&lt;Todoitem  key = &#123;2&#125;  text=” Second&quot; completed=&#123;false&#125; &gt;   </span><br><span class="line">		&lt;Todo工tem  key = &#123;3&#125;  text=”Third” completed=&#123;false&#125; &gt;  </span><br><span class="line">	&lt;/ul &gt; </span><br><span class="line">``` </span><br><span class="line"></span><br><span class="line">* 2.React组件  </span><br><span class="line"></span><br><span class="line">###### ⚠️：&lt;font color=#8B1a1A&gt; shouldComponentUpdate函数  &lt;/font&gt;        </span><br><span class="line"></span><br><span class="line">###### 利用reslect提高数据获取性能</span><br><span class="line">&gt; 步骤一：</span><br><span class="line">&gt; 比较对象（===）</span><br><span class="line"></span><br><span class="line">&gt; 步骤二：</span><br><span class="line">&gt; 各种模块定义具体比较算法</span><br><span class="line"></span><br><span class="line">* 3.定时器尽量封装成组件</span><br><span class="line"></span><br><span class="line">###### ⚠️&lt;font color=#8B1a1A&gt; this.setState促使该Componet重新渲染 &lt;/font&gt;</span><br></pre></td></tr></table></figure>
-<pre><code>componentDidMount() {    
-	this._setStateBySeconds(this.props.seconds);   
-	this.time_interval = setInterval(() =&gt; {   
-		this.setState(time:NewValue);
-   }, 1000);          
-}
-</code></pre>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">* 4.Purecomponent</span><br><span class="line"></span><br><span class="line">###### ⚠️&lt;font color=#8B1a1A&gt; 浅比较（比较指针异同） &lt;/font&gt;   </span><br><span class="line">     </span><br><span class="line">&gt; options.push(new Option())  </span><br><span class="line">&gt; options.splice(0, 1).  </span><br><span class="line">&gt; options[i].name = &quot;Hello&quot;  </span><br><span class="line"></span><br><span class="line">* 5.内联函数</span><br></pre></td></tr></table></figure>
-<pre><code>1.
-render() {   
-	return &lt;MyInput onChange={this.update.bind(this)} /&gt;;  
-}
-
-2.
-constructor(props) {   
-	super(props);  
-	this.update = this.update.bind(this);   
-}    
-render() {   
-	return &lt;MyInput onChange={this.update} /&gt;;  
-}
-</code></pre>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">* 6.Literal Array 与 Literal Object</span><br><span class="line"></span><br><span class="line">###### ⚠️&lt;font color=#8B1a1A&gt; []每次会生成新的Array &lt;/font&gt;   </span><br><span class="line">```1.</span><br><span class="line">	&#123;this.props.items.map(i =&gt;  </span><br><span class="line">		&lt;Cell data=&#123;i&#125; options=&#123;this.props.options || []&#125; /&gt;  </span><br><span class="line">	)&#125;  </span><br><span class="line">	2.</span><br><span class="line">	const default = [];  </span><br><span class="line">	&#123;this.props.items.map(i =&gt;  </span><br><span class="line">		&lt;Cell data=&#123;i&#125; options=&#123;this.props.options || default&#125; /&gt;   </span><br><span class="line">	)&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;url &gt;   </span><br><span class="line">	&lt;Todoitem key = &#123;1&#125; text=” First” completed=&#123; false&#125; &gt;    </span><br><span class="line">	&lt;Todoitem  key = &#123;2&#125;  text=” Second&quot; completed=&#123;false&#125; &gt;      </span><br><span class="line">	&lt;Todo工tem  key = &#123;3&#125;  text=”Third” completed=&#123;false&#125; &gt;  </span><br><span class="line">&lt;/ul &gt;</span><br></pre></td></tr></table></figure>
+<h2 id="none"><a class="header-anchor" href="#none"></a></h2>
+<ul>
+<li>2.React组件</li>
+</ul>
+<h6 id="⚠-：-font-color-8b1a1a-shouldcomponentupdate函数-font"><a class="header-anchor" href="#⚠-：-font-color-8b1a1a-shouldcomponentupdate函数-font"></a>⚠️：<font color="#8B1a1A"> shouldComponentUpdate函数  </font></h6>
+<h6 id="利用reslect提高数据获取性能"><a class="header-anchor" href="#利用reslect提高数据获取性能"></a>利用reslect提高数据获取性能</h6>
+<blockquote>
+<p>步骤一：<br>
+比较对象（===）</p>
+</blockquote>
+<blockquote>
+<p>步骤二：<br>
+各种模块定义具体比较算法</p>
+</blockquote>
+<ul>
+<li>3.定时器尽量封装成组件</li>
+</ul>
+<h6 id="⚠-font-color-8b1a1a-this-setstate促使该componet重新渲染-font"><a class="header-anchor" href="#⚠-font-color-8b1a1a-this-setstate促使该componet重新渲染-font"></a>⚠️<font color="#8B1a1A"> this.setState促使该Componet重新渲染 </font></h6>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">componentDidMount() &#123;    </span><br><span class="line">	this._setStateBySeconds(this.props.seconds);   </span><br><span class="line">	this.time_interval = setInterval(() =&gt; &#123;   </span><br><span class="line">		this.setState(time:NewValue);</span><br><span class="line">      &#125;, 1000);          </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>4.Purecomponent</li>
+</ul>
+<h6 id="⚠-font-color-8b1a1a-浅比较-比较指针异同-font"><a class="header-anchor" href="#⚠-font-color-8b1a1a-浅比较-比较指针异同-font"></a>⚠️<font color="#8B1a1A"> 浅比较（比较指针异同） </font></h6>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">&gt; options.push(new Option())  </span><br><span class="line">&gt; options.splice(0, 1).  </span><br><span class="line">&gt; options[i].name = &quot;Hello&quot;  </span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<ul>
+<li>5.内联函数</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">1.</span><br><span class="line">render() &#123;   </span><br><span class="line">	return &lt;MyInput onChange=&#123;this.update.bind(this)&#125; /&gt;;  </span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">2.</span><br><span class="line">constructor(props) &#123;   </span><br><span class="line">	super(props);  </span><br><span class="line">	this.update = this.update.bind(this);   </span><br><span class="line">&#125;    </span><br><span class="line">render() &#123;   </span><br><span class="line">	return &lt;MyInput onChange=&#123;this.update&#125; /&gt;;  </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>6.Literal Array 与 Literal Object</li>
+</ul>
+<h6 id="⚠-font-color-8b1a1a-每次会生成新的array-font"><a class="header-anchor" href="#⚠-font-color-8b1a1a-每次会生成新的array-font"></a>⚠️<font color="#8B1a1A"> []每次会生成新的Array </font></h6>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&#123;this.props.items.map(i =&gt;  </span><br><span class="line">	&lt;Cell data=&#123;i&#125; options=&#123;this.props.options || []&#125; /&gt;  </span><br><span class="line">)&#125;  </span><br><span class="line">2.</span><br><span class="line">const default = [];  </span><br><span class="line">&#123;this.props.items.map(i =&gt;  </span><br><span class="line">	&lt;Cell data=&#123;i&#125; options=&#123;this.props.options || default&#125; /&gt;   </span><br><span class="line">)&#125;</span><br></pre></td></tr></table></figure>
 <h3 id="6-rn动态分发"><a class="header-anchor" href="#6-rn动态分发"></a>6.RN动态分发</h3>
 <ul>
 <li>1.开发模式</li>
@@ -403,7 +400,7 @@ render() {
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/06/11/此时此刻拥抱RN与Redux/" data-id="cjx0hko9h0005uvjde21gup8r" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/06/11/此时此刻拥抱RN与Redux/" data-id="cjx0i8uul00040fjdmm67t4tz" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/RN/">RN</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/React-Native/">React-Native</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Redux/">Redux</a></li></ul>
@@ -527,7 +524,7 @@ render() {
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/06/01/使用Hexo-Github搭建博客/" data-id="cjx0hko9e0003uvjdcgq39oao" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/06/01/使用Hexo-Github搭建博客/" data-id="cjx0i8uuk00030fjdl7pj150d" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Github/">Github</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Hexo/">Hexo</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Mac/">Mac</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/搭建博客/">搭建博客</a></li></ul>
@@ -599,7 +596,7 @@ render() {
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/05/31/VSCode中React-native环境配置/" data-id="cjx0hko8z0000uvjd6d6kid0m" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/05/31/VSCode中React-native环境配置/" data-id="cjx0i8uu900000fjd18fr3fg1" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/RN/">RN</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/React-Native/">React-Native</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/VSCode/">VSCode</a></li></ul>
@@ -684,7 +681,7 @@ render() {
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/05/31/管理多个ssh-Key-MacOS/" data-id="cjx0hko980001uvjdmijbb811" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/05/31/管理多个ssh-Key-MacOS/" data-id="cjx0i8uue00010fjdjxzp3b00" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/git/">git</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/sshKey/">sshKey</a></li></ul>
