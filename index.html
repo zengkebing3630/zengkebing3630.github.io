@@ -62,6 +62,359 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-NPM与Package那些事" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/06/14/NPM与Package那些事/" class="article-date">
+  <time datetime="2019-06-14T06:16:45.000Z" itemprop="datePublished">2019-06-14</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/06/14/NPM与Package那些事/">NPM与Package那些事</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="font-color-19999f-1-package-json-必须是纯json的-内容详解-font"><a class="header-anchor" href="#font-color-19999f-1-package-json-必须是纯json的-内容详解-font"></a><font color="#19999f"> 1.Package.json(必须是纯JSON的)内容详解 </font></h3>
+<ul>
+<li>
+<ol>
+<li>name:项目名称,必须</li>
+</ol>
+</li>
+<li>
+<ol start="2">
+<li>version:项目版本,必须</li>
+</ol>
+</li>
+<li>
+<ol start="3">
+<li>description:项目描述</li>
+</ol>
+</li>
+<li>
+<ol start="4">
+<li>main:主文件或入口文件|require(‘package’)将返回xxx.js的内容</li>
+</ol>
+</li>
+<li>
+<ol start="5">
+<li>scripts:运行脚本命令的npm命令行缩写<br>
+5.1)test:测试脚本<br>
+5.2)build:打包脚本<br>
+5.3)run:运行脚本</li>
+</ol>
+</li>
+<li>
+<ol start="6">
+<li>author:作者</li>
+</ol>
+</li>
+<li>
+<ol start="7">
+<li>license:Code协议</li>
+</ol>
+</li>
+<li>
+<ol start="8">
+<li>devDependencies:项目开发环境运行所依赖的模块</li>
+</ol>
+</li>
+<li>
+<ol start="9">
+<li>dependencies:项目运行所依赖的模块</li>
+</ol>
+</li>
+<li>
+<ol start="10">
+<li>keyword:包关键字:在使用npm search时找到这个包。</li>
+</ol>
+</li>
+<li>
+<ol start="11">
+<li>homepage:项目主页</li>
+</ol>
+</li>
+<li>
+<ol start="12">
+<li>bugs:项目的issue跟踪页面或这报告issue的email地址</li>
+</ol>
+</li>
+<li>
+<ol start="13">
+<li>files:项目包含的文件名数组</li>
+</ol>
+</li>
+<li>
+<ol start="14">
+<li>repository:代码远程仓库</li>
+</ol>
+</li>
+<li>
+<ol start="15">
+<li>config:包脚本中的配置参数</li>
+</ol>
+</li>
+<li>
+<ol start="16">
+<li>bundledDependencies:在发布包时，包名的数组会被打包进去</li>
+</ol>
+</li>
+<li>
+<ol start="17">
+<li>os:模块运行的操作系统</li>
+</ol>
+</li>
+<li>
+<ol start="18">
+<li>cpu:cpu架构</li>
+</ol>
+</li>
+<li>
+<ol start="19">
+<li>private:是否是私有包（npm拒绝发布私有包）</li>
+</ol>
+</li>
+<li>
+<ol start="20">
+<li>publishConfig:公共配置参数</li>
+</ol>
+</li>
+<li>
+<ol start="21">
+<li>peerDependencies:用来供插件指定其所需要的主工具的版本</li>
+</ol>
+</li>
+<li>
+<ol start="22">
+<li>bin:指定各个内部命令对应的可执行文件的位置</li>
+</ol>
+</li>
+<li>
+<ol start="23">
+<li>engines:指明了该项目所需要的node.js版本</li>
+</ol>
+</li>
+<li>
+<ol start="24">
+<li>browser:指定该模板供浏览器使用的版本</li>
+</ol>
+</li>
+<li>
+<ol start="25">
+<li>preferGlobal:表示是否将该模块安装为全局模块</li>
+</ol>
+</li>
+<li>
+<ol start="26">
+<li>style:指定供浏览器使用时样式文件所在的位置</li>
+</ol>
+</li>
+</ul>
+<h3 id="font-color-19999f-2-package-json实例-font"><a class="header-anchor" href="#font-color-19999f-2-package-json实例-font"></a><font color="#19999f"> 2.Package.json实例 </font></h3>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line"> 	<span class="attr">"name"</span>: <span class="string">"foo"</span>,</span><br><span class="line">    <span class="attr">"version"</span>: <span class="string">"1.2.3"</span>,</span><br><span class="line">    <span class="attr">"description"</span>: <span class="string">"A packaged foo fooer for fooing foos"</span>,</span><br><span class="line">    <span class="attr">"config"</span> : &#123; <span class="attr">"port"</span> : <span class="string">"8080"</span> &#125;,</span><br><span class="line">    <span class="attr">"main"</span>: <span class="string">"foo.js"</span>,</span><br><span class="line">    <span class="attr">"man"</span>: [</span><br><span class="line">        <span class="string">"./man/foo.1"</span>,</span><br><span class="line">        <span class="string">"./man/bar.1"</span></span><br><span class="line">    ],</span><br><span class="line">    <span class="attr">"keywords"</span>: [</span><br><span class="line">        <span class="string">"weex"</span></span><br><span class="line">    ],</span><br><span class="line">    <span class="attr">"author"</span>: <span class="string">"fkysly@gmail.com"</span>,</span><br><span class="line">    <span class="attr">"license"</span>: <span class="string">"MIT"</span>,</span><br><span class="line">    <span class="attr">"os"</span> : [ <span class="string">"darwin"</span>, <span class="string">"linux"</span> ],</span><br><span class="line">    <span class="attr">"cpu"</span> : [ <span class="string">"x64"</span>, <span class="string">"ia32"</span> ],</span><br><span class="line">    <span class="attr">"devDependencies"</span>: &#123;</span><br><span class="line">        <span class="attr">"babel-core"</span>: <span class="string">"^6.14.0"</span>,</span><br><span class="line">        <span class="attr">"babel-loader"</span>: <span class="string">"^6.2.5"</span>,</span><br><span class="line">        <span class="attr">"babel-preset-es2015"</span>: <span class="string">"^6.18.0"</span>,</span><br><span class="line">        <span class="attr">"vue-loader"</span>: <span class="string">"^10.0.2"</span>,</span><br><span class="line">        <span class="attr">"eslint"</span>: <span class="string">"^3.5.0"</span>,</span><br><span class="line">        <span class="attr">"serve"</span>: <span class="string">"^1.4.0"</span>,</span><br><span class="line">        <span class="attr">"webpack"</span>: <span class="string">"^1.13.2"</span>,</span><br><span class="line">        <span class="attr">"weex-loader"</span>: <span class="string">"^0.3.3"</span>,</span><br><span class="line">        <span class="attr">"weex-builder"</span>: <span class="string">"^0.2.6"</span></span><br><span class="line">    &#125;,</span><br><span class="line">    <span class="attr">"dependencies"</span>: &#123;</span><br><span class="line">        <span class="attr">"weex-html5"</span>: <span class="string">"^0.3.2"</span>,</span><br><span class="line">        <span class="attr">"weex-components"</span>: <span class="string">"*"</span></span><br><span class="line">    &#125;,</span><br><span class="line">    <span class="attr">"bugs"</span>:&#123; </span><br><span class="line">　　	<span class="attr">"url"</span> : <span class="string">"https://github.com/owner/project/issues"</span>,</span><br><span class="line">　　	<span class="attr">"email"</span> : <span class="string">"project@hostname.com"</span></span><br><span class="line">	&#125;,</span><br><span class="line">	<span class="attr">"repository"</span>: &#123;</span><br><span class="line">        <span class="attr">"type"</span>: <span class="string">"git"</span>,</span><br><span class="line">        <span class="attr">"url"</span>: <span class="string">"https://github.com/npm/npm.git"</span></span><br><span class="line">    &#125;,</span><br><span class="line">    "bin": &#123;//someTool 命令对应的可执行文件为 bin 子目录下的 someTool.js</span><br><span class="line">  		 "someTool": "./bin/someTool.js"</span><br><span class="line">	&#125;,</span><br><span class="line">	"peerDependencies": &#123;</span><br><span class="line">	    "chai": "1.x"</span><br><span class="line">	  &#125;,</span><br><span class="line">	  "style": [</span><br><span class="line">  		 <span class="string">"./node_modules/tipso/src/tipso.css"</span></span><br><span class="line">		],</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="font-color-19999f-3-依赖库版本控制-font"><a class="header-anchor" href="#font-color-19999f-3-依赖库版本控制-font"></a><font color="#19999f"> 3.依赖库版本控制 </font></h3>
+<h4 id="1-npm包版本号规范"><a class="header-anchor" href="#1-npm包版本号规范"></a>1.npm包版本号规范</h4>
+<p><img src="../images/npmPackageVersion.png" alt></p>
+<ul>
+<li>
+<ol>
+<li>大版本：大改版，无法兼容之前的，增加第一位数字，比如 2.0.0</li>
+</ol>
+</li>
+<li>
+<ol start="2">
+<li>小版本：增加了新特性，同时不会影响之前的版本，增加中间一位数字，比如 1.1.0</li>
+</ol>
+</li>
+<li>
+<ol start="3">
+<li>补丁版本：解决了 Bug 或者一些较小的更改，增加最后一位数字，比如 1.0.1</li>
+</ol>
+</li>
+</ul>
+<h4 id="2-版本规则"><a class="header-anchor" href="#2-版本规则"></a>2.版本规则</h4>
+<ul>
+<li>1.如果只打算接受补丁版本的更新（也就是最后一位的改变）</li>
+</ul>
+<blockquote>
+<p>1.0<br>
+1.0.x<br>
+~1.0.4</p>
+</blockquote>
+<ul>
+<li>2.如果接受小版本的更新（第二位的改变)</li>
+</ul>
+<blockquote>
+<p>1<br>
+1.x<br>
+^1.0.4</p>
+</blockquote>
+<ul>
+<li>3.如果可以接受大版本的更新（自然接受小版本和补丁版本的改变)</li>
+</ul>
+<blockquote>
+<ul>
+<li></li>
+</ul>
+<p>x</p>
+</blockquote>
+<h4 id="4-实例"><a class="header-anchor" href="#4-实例"></a>4.实例</h4>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">"dependencies": &#123;//版本限制在:接受小版本的更新（第二位的改变）</span><br><span class="line">    "lodash": "^3.1.0"</span><br><span class="line">  &#125;,</span><br><span class="line">  "dependencies": &#123;//表示任何版本的更新都接受</span><br><span class="line">    "lodash": "*"</span><br><span class="line">  &#125;,</span><br><span class="line">  "devDependencies": &#123;</span><br><span class="line">    "browserify": "^13.0.0",//表示安装13.x.x的最新版本（不低于13.0.0），但是不安装14.x.x，也就是说安装时不改变大版本号。</span><br><span class="line">    "karma-browserify": "~5.0.1,"//表示安装5.0.x的最新版本（不低于5.0.1），但是不安装5.1.x，也就是说安装时不改变大版本号和次要版本号</span><br><span class="line">    "express": "latest",//最新版本号</span><br><span class="line">    "MD5": "1.2.0"//正常版本号</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="font-color-19999f-3-npm常用命令-font"><a class="header-anchor" href="#font-color-19999f-3-npm常用命令-font"></a><font color="#19999f"> 3.npm常用命令 </font></h3>
+<ul>
+<li>1.npm init:初始化工程，创建package.json文件</li>
+<li>2.npm install:本地安装</li>
+<li>3.npm install -g:全局安装(不能使用package.json里列举的依赖进行全局安装)</li>
+<li>4.npm install --save:本地安装并保存,在生产环境中需要用到的依赖 ,发布之后还依赖的东西</li>
+<li>5.npm install --save-dev:本地安装并保存,在开发、测试环境中用到的依赖,开发时依赖的东西</li>
+<li>6.npm run:运行Package.json中的scripts脚本命令，对应的是本地项目内 node_modules -&gt; .bin 内的脚本。</li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2019/06/14/NPM与Package那些事/" data-id="cjx0hko9g0004uvjdndsfwnpv" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Package-json/">Package.json</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/RN/">RN</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/node/">node</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/npm/">npm</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-此时此刻拥抱RN与Redux" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/06/11/此时此刻拥抱RN与Redux/" class="article-date">
+  <time datetime="2019-06-11T02:18:03.000Z" itemprop="datePublished">2019-06-11</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/06/11/此时此刻拥抱RN与Redux/">此时此刻拥抱RN与Redux</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="1-移动端比较在意三个方面"><a class="header-anchor" href="#1-移动端比较在意三个方面"></a>1.移动端比较在意三个方面</h3>
+<ul>
+<li>1.包的体积</li>
+<li>2.热更新</li>
+<li>3.动态配置</li>
+</ul>
+<h3 id="2-移动端动态化的演变"><a class="header-anchor" href="#2-移动端动态化的演变"></a>2.移动端动态化的演变</h3>
+<p><img src="../images/appdycms.png" alt></p>
+<h3 id="3-现存方案的优缺点"><a class="header-anchor" href="#3-现存方案的优缺点"></a>3.现存方案的优缺点</h3>
+<ul>
+<li>
+<p>1.RN VS Weex<br>
+<img src="../images/RNVSWeex.png" alt></p>
+</li>
+<li>
+<p>2.RN VS Cordova<br>
+<img src="../images/RNVSCordova.png" alt></p>
+</li>
+<li>
+<p>3.RN VS Flutter<br>
+<img src="../images/RNVSFlutter.png" alt></p>
+</li>
+</ul>
+<h3 id="4-react-redux"><a class="header-anchor" href="#4-react-redux"></a>4.React &amp; Redux</h3>
+<ul>
+<li>1.数据流</li>
+</ul>
+<h6 id="⚠-：-font-color-8b1a1a-纯函数-纯数据-font"><a class="header-anchor" href="#⚠-：-font-color-8b1a1a-纯函数-纯数据-font"></a>⚠️：<font color="#8B1a1A"> 纯函数 纯数据 </font></h6>
+<p><img src="../images/RNRedux.png" alt></p>
+<ul>
+<li>2.工程目录</li>
+</ul>
+<p><img src="../images/RNReduxPath.png" alt></p>
+<h3 id="5-redux中的性能优化"><a class="header-anchor" href="#5-redux中的性能优化"></a>5.Redux中的性能优化</h3>
+<ul>
+<li>1.Reconciliation算法</li>
+</ul>
+<h6 id="单个组件"><a class="header-anchor" href="#单个组件"></a>单个组件</h6>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">节点不同:</span><br><span class="line">	&lt;div&gt;  </span><br><span class="line">		&lt;Todos /&gt;   </span><br><span class="line">	&lt;/div&gt; </span><br><span class="line"></span><br><span class="line">	&lt;span&gt;  </span><br><span class="line">		&lt;Todos/&gt;   </span><br><span class="line">	&lt;/span &gt;   </span><br><span class="line"></span><br><span class="line">节点相同:  </span><br><span class="line">	&lt;div style=&#123;&#123;color: ” red”, fontSize: 15&#125;&#125; className=” welcome” &gt;   </span><br><span class="line">		 Hello World</span><br><span class="line">	&lt;/div &gt;   </span><br><span class="line"> </span><br><span class="line">	&lt;div style=`&#123;&#123;color: ” green”, fontSize: 15&#125;&#125;` className=” farewell” &gt;   </span><br><span class="line">		Good Bye</span><br><span class="line">	&lt;/div &gt;</span><br></pre></td></tr></table></figure>
+<h6 id="多个组件"><a class="header-anchor" href="#多个组件"></a>多个组件</h6>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;url &gt;   </span><br><span class="line">	&lt;Todoitem text=” First” completed=&#123; false&#125; &gt;</span><br><span class="line">	&lt;Todoitem text=” Second&quot; completed=&#123;false&#125; &gt;   </span><br><span class="line">	&lt;Todo工tem text=”Third” completed=&#123;false&#125; &gt;   </span><br><span class="line">&lt;/ul &gt;</span><br></pre></td></tr></table></figure>
+<h6 id="利用key值"><a class="header-anchor" href="#利用key值"></a>利用Key值</h6>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">	&lt;url &gt;   </span><br><span class="line">		&lt;Todoitem key = &#123;1&#125; text=” First” completed=&#123; false&#125; &gt;   </span><br><span class="line">		&lt;Todoitem  key = &#123;2&#125;  text=” Second&quot; completed=&#123;false&#125; &gt;   </span><br><span class="line">		&lt;Todo工tem  key = &#123;3&#125;  text=”Third” completed=&#123;false&#125; &gt;  </span><br><span class="line">	&lt;/ul &gt; </span><br><span class="line">``` </span><br><span class="line"></span><br><span class="line">* 2.React组件  </span><br><span class="line"></span><br><span class="line">###### ⚠️：&lt;font color=#8B1a1A&gt; shouldComponentUpdate函数  &lt;/font&gt;        </span><br><span class="line"></span><br><span class="line">###### 利用reslect提高数据获取性能</span><br><span class="line">&gt; 步骤一：</span><br><span class="line">&gt; 比较对象（===）</span><br><span class="line"></span><br><span class="line">&gt; 步骤二：</span><br><span class="line">&gt; 各种模块定义具体比较算法</span><br><span class="line"></span><br><span class="line">* 3.定时器尽量封装成组件</span><br><span class="line"></span><br><span class="line">###### ⚠️&lt;font color=#8B1a1A&gt; this.setState促使该Componet重新渲染 &lt;/font&gt;</span><br></pre></td></tr></table></figure>
+<pre><code>componentDidMount() {    
+	this._setStateBySeconds(this.props.seconds);   
+	this.time_interval = setInterval(() =&gt; {   
+		this.setState(time:NewValue);
+   }, 1000);          
+}
+</code></pre>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">* 4.Purecomponent</span><br><span class="line"></span><br><span class="line">###### ⚠️&lt;font color=#8B1a1A&gt; 浅比较（比较指针异同） &lt;/font&gt;   </span><br><span class="line">     </span><br><span class="line">&gt; options.push(new Option())  </span><br><span class="line">&gt; options.splice(0, 1).  </span><br><span class="line">&gt; options[i].name = &quot;Hello&quot;  </span><br><span class="line"></span><br><span class="line">* 5.内联函数</span><br></pre></td></tr></table></figure>
+<pre><code>1.
+render() {   
+	return &lt;MyInput onChange={this.update.bind(this)} /&gt;;  
+}
+
+2.
+constructor(props) {   
+	super(props);  
+	this.update = this.update.bind(this);   
+}    
+render() {   
+	return &lt;MyInput onChange={this.update} /&gt;;  
+}
+</code></pre>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">* 6.Literal Array 与 Literal Object</span><br><span class="line"></span><br><span class="line">###### ⚠️&lt;font color=#8B1a1A&gt; []每次会生成新的Array &lt;/font&gt;   </span><br><span class="line">```1.</span><br><span class="line">	&#123;this.props.items.map(i =&gt;  </span><br><span class="line">		&lt;Cell data=&#123;i&#125; options=&#123;this.props.options || []&#125; /&gt;  </span><br><span class="line">	)&#125;  </span><br><span class="line">	2.</span><br><span class="line">	const default = [];  </span><br><span class="line">	&#123;this.props.items.map(i =&gt;  </span><br><span class="line">		&lt;Cell data=&#123;i&#125; options=&#123;this.props.options || default&#125; /&gt;   </span><br><span class="line">	)&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="6-rn动态分发"><a class="header-anchor" href="#6-rn动态分发"></a>6.RN动态分发</h3>
+<ul>
+<li>1.开发模式</li>
+</ul>
+<p><img src="../images/RNDevelopMode.png" alt></p>
+<ul>
+<li>2.分发流程</li>
+</ul>
+<p><img src="../images/RNSourceDistribution.png" alt></p>
+<h3 id="7-结束语"><a class="header-anchor" href="#7-结束语"></a>7.结束语</h3>
+<h4 id="rn已至-flutter未来-且行且珍惜"><a class="header-anchor" href="#rn已至-flutter未来-且行且珍惜"></a>RN已至，Flutter未来，且行且珍惜～</h4>
+<h3 id="8-参考"><a class="header-anchor" href="#8-参考"></a>8.参考</h3>
+<ul>
+<li>1.<a href="https://wulv.site/2017-05-31/react-purecomponent.html" target="_blank" rel="noopener">React Purecomponent使用指南</a></li>
+<li>2.<a href="https://item.jd.com/12073933.html" target="_blank" rel="noopener">深入浅出React和Redux</a></li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2019/06/11/此时此刻拥抱RN与Redux/" data-id="cjx0hko9h0005uvjde21gup8r" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/RN/">RN</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/React-Native/">React-Native</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Redux/">Redux</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-使用Hexo-Github搭建博客" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2019/06/01/使用Hexo-Github搭建博客/" class="article-date">
@@ -174,7 +527,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/06/01/使用Hexo-Github搭建博客/" data-id="cjwf2lwxp0003zjjdc885nq12" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/06/01/使用Hexo-Github搭建博客/" data-id="cjx0hko9e0003uvjdcgq39oao" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Github/">Github</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Hexo/">Hexo</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Mac/">Mac</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/搭建博客/">搭建博客</a></li></ul>
@@ -246,7 +599,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/05/31/VSCode中React-native环境配置/" data-id="cjwf2lwxe0000zjjd2qvr6x9w" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/05/31/VSCode中React-native环境配置/" data-id="cjx0hko8z0000uvjd6d6kid0m" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/RN/">RN</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/React-Native/">React-Native</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/VSCode/">VSCode</a></li></ul>
@@ -331,7 +684,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/05/31/管理多个ssh-Key-MacOS/" data-id="cjwf2lwxk0001zjjdvgzfivsx" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/05/31/管理多个ssh-Key-MacOS/" data-id="cjx0hko980001uvjdmijbb811" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/git/">git</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/sshKey/">sshKey</a></li></ul>
@@ -356,7 +709,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tags</h3>
     <div class="widget">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Github/">Github</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Hexo/">Hexo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Mac/">Mac</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/RN/">RN</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/React-Native/">React-Native</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/VSCode/">VSCode</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/">git</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/sshKey/">sshKey</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/搭建博客/">搭建博客</a></li></ul>
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Github/">Github</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Hexo/">Hexo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Mac/">Mac</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Package-json/">Package.json</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/RN/">RN</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/React-Native/">React-Native</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Redux/">Redux</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/VSCode/">VSCode</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/">git</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/node/">node</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/npm/">npm</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/sshKey/">sshKey</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/搭建博客/">搭建博客</a></li></ul>
     </div>
   </div>
 
@@ -366,7 +719,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
-      <a href="/tags/Github/" style="font-size: 10px;">Github</a> <a href="/tags/Hexo/" style="font-size: 10px;">Hexo</a> <a href="/tags/Mac/" style="font-size: 10px;">Mac</a> <a href="/tags/RN/" style="font-size: 10px;">RN</a> <a href="/tags/React-Native/" style="font-size: 10px;">React-Native</a> <a href="/tags/VSCode/" style="font-size: 10px;">VSCode</a> <a href="/tags/git/" style="font-size: 10px;">git</a> <a href="/tags/sshKey/" style="font-size: 10px;">sshKey</a> <a href="/tags/搭建博客/" style="font-size: 10px;">搭建博客</a>
+      <a href="/tags/Github/" style="font-size: 10px;">Github</a> <a href="/tags/Hexo/" style="font-size: 10px;">Hexo</a> <a href="/tags/Mac/" style="font-size: 10px;">Mac</a> <a href="/tags/Package-json/" style="font-size: 10px;">Package.json</a> <a href="/tags/RN/" style="font-size: 20px;">RN</a> <a href="/tags/React-Native/" style="font-size: 15px;">React-Native</a> <a href="/tags/Redux/" style="font-size: 10px;">Redux</a> <a href="/tags/VSCode/" style="font-size: 10px;">VSCode</a> <a href="/tags/git/" style="font-size: 10px;">git</a> <a href="/tags/node/" style="font-size: 10px;">node</a> <a href="/tags/npm/" style="font-size: 10px;">npm</a> <a href="/tags/sshKey/" style="font-size: 10px;">sshKey</a> <a href="/tags/搭建博客/" style="font-size: 10px;">搭建博客</a>
     </div>
   </div>
 
@@ -386,6 +739,14 @@
     <h3 class="widget-title">Recent Posts</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2019/06/14/NPM与Package那些事/">NPM与Package那些事</a>
+          </li>
+        
+          <li>
+            <a href="/2019/06/11/此时此刻拥抱RN与Redux/">此时此刻拥抱RN与Redux</a>
+          </li>
         
           <li>
             <a href="/2019/06/01/使用Hexo-Github搭建博客/">使用Hexo+Github搭建博客</a>

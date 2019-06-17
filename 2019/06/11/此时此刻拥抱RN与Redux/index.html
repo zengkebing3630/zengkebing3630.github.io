@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="utf-8">
+  
+
+  
+  <title>此时此刻拥抱RN与Redux | KT.Moral</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="1.移动端比较在意三个方面  1.包的体积 2.热更新 3.动态配置  2.移动端动态化的演变  3.现存方案的优缺点   1.RN VS Weex    2.RN VS Cordova    3.RN VS Flutter    4.React &amp;amp; Redux  1.数据流  ⚠️： 纯函数 纯数据    2.工程目录   5.Redux中的性能优化  1.Reconciliation算">
+<meta name="keywords" content="RN,React-Native,Redux">
+<meta property="og:type" content="article">
+<meta property="og:title" content="此时此刻拥抱RN与Redux">
+<meta property="og:url" content="http://yoursite.com/2019/06/11/此时此刻拥抱RN与Redux/index.html">
+<meta property="og:site_name" content="KT.Moral">
+<meta property="og:description" content="1.移动端比较在意三个方面  1.包的体积 2.热更新 3.动态配置  2.移动端动态化的演变  3.现存方案的优缺点   1.RN VS Weex    2.RN VS Cordova    3.RN VS Flutter    4.React &amp;amp; Redux  1.数据流  ⚠️： 纯函数 纯数据    2.工程目录   5.Redux中的性能优化  1.Reconciliation算">
+<meta property="og:locale" content="default">
+<meta property="og:image" content="http://yoursite.com/2019/06/11/images/appdycms.png">
+<meta property="og:image" content="http://yoursite.com/2019/06/11/images/RNVSWeex.png">
+<meta property="og:image" content="http://yoursite.com/2019/06/11/images/RNVSCordova.png">
+<meta property="og:image" content="http://yoursite.com/2019/06/11/images/RNVSFlutter.png">
+<meta property="og:image" content="http://yoursite.com/2019/06/11/images/RNRedux.png">
+<meta property="og:image" content="http://yoursite.com/2019/06/11/images/RNReduxPath.png">
+<meta property="og:image" content="http://yoursite.com/2019/06/11/images/RNDevelopMode.png">
+<meta property="og:image" content="http://yoursite.com/2019/06/11/images/RNSourceDistribution.png">
+<meta property="og:updated_time" content="2019-06-17T14:51:18.469Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="此时此刻拥抱RN与Redux">
+<meta name="twitter:description" content="1.移动端比较在意三个方面  1.包的体积 2.热更新 3.动态配置  2.移动端动态化的演变  3.现存方案的优缺点   1.RN VS Weex    2.RN VS Cordova    3.RN VS Flutter    4.React &amp;amp; Redux  1.数据流  ⚠️： 纯函数 纯数据    2.工程目录   5.Redux中的性能优化  1.Reconciliation算">
+<meta name="twitter:image" content="http://yoursite.com/2019/06/11/images/appdycms.png">
+  
+    <link rel="alternate" href="/atom.xml" title="KT.Moral" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+</html>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">KT.Moral</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-此时此刻拥抱RN与Redux" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/06/11/此时此刻拥抱RN与Redux/" class="article-date">
+  <time datetime="2019-06-11T02:18:03.000Z" itemprop="datePublished">2019-06-11</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      此时此刻拥抱RN与Redux
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="1-移动端比较在意三个方面"><a class="header-anchor" href="#1-移动端比较在意三个方面"></a>1.移动端比较在意三个方面</h3>
+<ul>
+<li>1.包的体积</li>
+<li>2.热更新</li>
+<li>3.动态配置</li>
+</ul>
+<h3 id="2-移动端动态化的演变"><a class="header-anchor" href="#2-移动端动态化的演变"></a>2.移动端动态化的演变</h3>
+<p><img src="../images/appdycms.png" alt></p>
+<h3 id="3-现存方案的优缺点"><a class="header-anchor" href="#3-现存方案的优缺点"></a>3.现存方案的优缺点</h3>
+<ul>
+<li>
+<p>1.RN VS Weex<br>
+<img src="../images/RNVSWeex.png" alt></p>
+</li>
+<li>
+<p>2.RN VS Cordova<br>
+<img src="../images/RNVSCordova.png" alt></p>
+</li>
+<li>
+<p>3.RN VS Flutter<br>
+<img src="../images/RNVSFlutter.png" alt></p>
+</li>
+</ul>
+<h3 id="4-react-redux"><a class="header-anchor" href="#4-react-redux"></a>4.React &amp; Redux</h3>
+<ul>
+<li>1.数据流</li>
+</ul>
+<h6 id="⚠-：-font-color-8b1a1a-纯函数-纯数据-font"><a class="header-anchor" href="#⚠-：-font-color-8b1a1a-纯函数-纯数据-font"></a>⚠️：<font color="#8B1a1A"> 纯函数 纯数据 </font></h6>
+<p><img src="../images/RNRedux.png" alt></p>
+<ul>
+<li>2.工程目录</li>
+</ul>
+<p><img src="../images/RNReduxPath.png" alt></p>
+<h3 id="5-redux中的性能优化"><a class="header-anchor" href="#5-redux中的性能优化"></a>5.Redux中的性能优化</h3>
+<ul>
+<li>1.Reconciliation算法</li>
+</ul>
+<h6 id="单个组件"><a class="header-anchor" href="#单个组件"></a>单个组件</h6>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">节点不同:</span><br><span class="line">	&lt;div&gt;  </span><br><span class="line">		&lt;Todos /&gt;   </span><br><span class="line">	&lt;/div&gt; </span><br><span class="line"></span><br><span class="line">	&lt;span&gt;  </span><br><span class="line">		&lt;Todos/&gt;   </span><br><span class="line">	&lt;/span &gt;   </span><br><span class="line"></span><br><span class="line">节点相同:  </span><br><span class="line">	&lt;div style=&#123;&#123;color: ” red”, fontSize: 15&#125;&#125; className=” welcome” &gt;   </span><br><span class="line">		 Hello World</span><br><span class="line">	&lt;/div &gt;   </span><br><span class="line"> </span><br><span class="line">	&lt;div style=`&#123;&#123;color: ” green”, fontSize: 15&#125;&#125;` className=” farewell” &gt;   </span><br><span class="line">		Good Bye</span><br><span class="line">	&lt;/div &gt;</span><br></pre></td></tr></table></figure>
+<h6 id="多个组件"><a class="header-anchor" href="#多个组件"></a>多个组件</h6>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;url &gt;   </span><br><span class="line">	&lt;Todoitem text=” First” completed=&#123; false&#125; &gt;</span><br><span class="line">	&lt;Todoitem text=” Second&quot; completed=&#123;false&#125; &gt;   </span><br><span class="line">	&lt;Todo工tem text=”Third” completed=&#123;false&#125; &gt;   </span><br><span class="line">&lt;/ul &gt;</span><br></pre></td></tr></table></figure>
+<h6 id="利用key值"><a class="header-anchor" href="#利用key值"></a>利用Key值</h6>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">	&lt;url &gt;   </span><br><span class="line">		&lt;Todoitem key = &#123;1&#125; text=” First” completed=&#123; false&#125; &gt;   </span><br><span class="line">		&lt;Todoitem  key = &#123;2&#125;  text=” Second&quot; completed=&#123;false&#125; &gt;   </span><br><span class="line">		&lt;Todo工tem  key = &#123;3&#125;  text=”Third” completed=&#123;false&#125; &gt;  </span><br><span class="line">	&lt;/ul &gt; </span><br><span class="line">``` </span><br><span class="line"></span><br><span class="line">* 2.React组件  </span><br><span class="line"></span><br><span class="line">###### ⚠️：&lt;font color=#8B1a1A&gt; shouldComponentUpdate函数  &lt;/font&gt;        </span><br><span class="line"></span><br><span class="line">###### 利用reslect提高数据获取性能</span><br><span class="line">&gt; 步骤一：</span><br><span class="line">&gt; 比较对象（===）</span><br><span class="line"></span><br><span class="line">&gt; 步骤二：</span><br><span class="line">&gt; 各种模块定义具体比较算法</span><br><span class="line"></span><br><span class="line">* 3.定时器尽量封装成组件</span><br><span class="line"></span><br><span class="line">###### ⚠️&lt;font color=#8B1a1A&gt; this.setState促使该Componet重新渲染 &lt;/font&gt;</span><br></pre></td></tr></table></figure>
+<pre><code>componentDidMount() {    
+	this._setStateBySeconds(this.props.seconds);   
+	this.time_interval = setInterval(() =&gt; {   
+		this.setState(time:NewValue);
+   }, 1000);          
+}
+</code></pre>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">* 4.Purecomponent</span><br><span class="line"></span><br><span class="line">###### ⚠️&lt;font color=#8B1a1A&gt; 浅比较（比较指针异同） &lt;/font&gt;   </span><br><span class="line">     </span><br><span class="line">&gt; options.push(new Option())  </span><br><span class="line">&gt; options.splice(0, 1).  </span><br><span class="line">&gt; options[i].name = &quot;Hello&quot;  </span><br><span class="line"></span><br><span class="line">* 5.内联函数</span><br></pre></td></tr></table></figure>
+<pre><code>1.
+render() {   
+	return &lt;MyInput onChange={this.update.bind(this)} /&gt;;  
+}
+
+2.
+constructor(props) {   
+	super(props);  
+	this.update = this.update.bind(this);   
+}    
+render() {   
+	return &lt;MyInput onChange={this.update} /&gt;;  
+}
+</code></pre>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">* 6.Literal Array 与 Literal Object</span><br><span class="line"></span><br><span class="line">###### ⚠️&lt;font color=#8B1a1A&gt; []每次会生成新的Array &lt;/font&gt;   </span><br><span class="line">```1.</span><br><span class="line">	&#123;this.props.items.map(i =&gt;  </span><br><span class="line">		&lt;Cell data=&#123;i&#125; options=&#123;this.props.options || []&#125; /&gt;  </span><br><span class="line">	)&#125;  </span><br><span class="line">	2.</span><br><span class="line">	const default = [];  </span><br><span class="line">	&#123;this.props.items.map(i =&gt;  </span><br><span class="line">		&lt;Cell data=&#123;i&#125; options=&#123;this.props.options || default&#125; /&gt;   </span><br><span class="line">	)&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="6-rn动态分发"><a class="header-anchor" href="#6-rn动态分发"></a>6.RN动态分发</h3>
+<ul>
+<li>1.开发模式</li>
+</ul>
+<p><img src="../images/RNDevelopMode.png" alt></p>
+<ul>
+<li>2.分发流程</li>
+</ul>
+<p><img src="../images/RNSourceDistribution.png" alt></p>
+<h3 id="7-结束语"><a class="header-anchor" href="#7-结束语"></a>7.结束语</h3>
+<h4 id="rn已至-flutter未来-且行且珍惜"><a class="header-anchor" href="#rn已至-flutter未来-且行且珍惜"></a>RN已至，Flutter未来，且行且珍惜～</h4>
+<h3 id="8-参考"><a class="header-anchor" href="#8-参考"></a>8.参考</h3>
+<ul>
+<li>1.<a href="https://wulv.site/2017-05-31/react-purecomponent.html" target="_blank" rel="noopener">React Purecomponent使用指南</a></li>
+<li>2.<a href="https://item.jd.com/12073933.html" target="_blank" rel="noopener">深入浅出React和Redux</a></li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2019/06/11/此时此刻拥抱RN与Redux/" data-id="cjx0hko9h0005uvjde21gup8r" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/RN/">RN</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/React-Native/">React-Native</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Redux/">Redux</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2019/06/14/NPM与Package那些事/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          NPM与Package那些事
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2019/06/01/使用Hexo-Github搭建博客/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">使用Hexo+Github搭建博客</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Github/">Github</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Hexo/">Hexo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Mac/">Mac</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Package-json/">Package.json</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/RN/">RN</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/React-Native/">React-Native</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Redux/">Redux</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/VSCode/">VSCode</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/">git</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/node/">node</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/npm/">npm</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/sshKey/">sshKey</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/搭建博客/">搭建博客</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/Github/" style="font-size: 10px;">Github</a> <a href="/tags/Hexo/" style="font-size: 10px;">Hexo</a> <a href="/tags/Mac/" style="font-size: 10px;">Mac</a> <a href="/tags/Package-json/" style="font-size: 10px;">Package.json</a> <a href="/tags/RN/" style="font-size: 20px;">RN</a> <a href="/tags/React-Native/" style="font-size: 15px;">React-Native</a> <a href="/tags/Redux/" style="font-size: 10px;">Redux</a> <a href="/tags/VSCode/" style="font-size: 10px;">VSCode</a> <a href="/tags/git/" style="font-size: 10px;">git</a> <a href="/tags/node/" style="font-size: 10px;">node</a> <a href="/tags/npm/" style="font-size: 10px;">npm</a> <a href="/tags/sshKey/" style="font-size: 10px;">sshKey</a> <a href="/tags/搭建博客/" style="font-size: 10px;">搭建博客</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/06/">June 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/05/">May 2019</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2019/06/14/NPM与Package那些事/">NPM与Package那些事</a>
+          </li>
+        
+          <li>
+            <a href="/2019/06/11/此时此刻拥抱RN与Redux/">此时此刻拥抱RN与Redux</a>
+          </li>
+        
+          <li>
+            <a href="/2019/06/01/使用Hexo-Github搭建博客/">使用Hexo+Github搭建博客</a>
+          </li>
+        
+          <li>
+            <a href="/2019/05/31/VSCode中React-native环境配置/">VSCode中React-native环境配置</a>
+          </li>
+        
+          <li>
+            <a href="/2019/05/31/管理多个ssh-Key-MacOS/">管理多个ssh-Key(MacOS)</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2019 KevenTsang<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+
+
+  </div>
+</body>
+</html>
